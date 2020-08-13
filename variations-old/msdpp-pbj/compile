@@ -1,0 +1,33 @@
+#! /bin/bash
+#
+mpif90 -c -O3 -vec-report invar.f90
+mpif90 -c -O3 -vec-report solvar.f90
+mpif90 -c -O3 -vec-report totvar.f90
+mpif90 -c -O3 -vec-report main.f90
+mpif90 -c -O3 -vec-report version.f90
+mpif90 -c -O3 -vec-report input.f90
+mpif90 -c -O3 -vec-report angle.f90
+mpif90 -c -O3 -vec-report readmt.f90
+mpif90 -c -O3 -vec-report readxs.f90
+mpif90 -c -O3 -vec-report readsrc.f90
+#mpif90 -c -O3 -vec-report readbc.f90
+mpif90 -c -O3 -vec-report check.f90
+mpif90 -c -O3 -vec-report echo.f90
+mpif90 -c -O3 -vec-report psds.f90
+mpif90 -c -O3 -vec-report procgrid.f90
+mpif90 -c -O3 -vec-report solve.f90
+mpif90 -c -O3 -vec-report idomats.f90
+mpif90 -c -O3 -vec-report idot.f90
+mpif90 -c -O3 -vec-report matsweep.f90
+mpif90 -c -O3 -vec-report gammas.f90
+mpif90 -c -O3 -vec-report jima.f90
+mpif90 -c -O3 -vec-report afcm.f90
+mpif90 -c -O3 -vec-report conk.f90
+mpif90 -c -O3 -vec-report pgsred.f90
+mpif90 -c -O3 -vec-report pgsblk.f90
+mpif90 -c -O3 -vec-report idocomb.f90
+mpif90 -c -O3 -vec-report flxgthr.f90
+mpif90 -c -O3 -vec-report output.f90
+mpif90 -lblas -llapack -O3 -o pidosits *.o
+#
+rm -rf *.o *.mod

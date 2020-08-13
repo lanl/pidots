@@ -1,0 +1,5 @@
+! Cross section file
+! Material 1
+!
+1.0          ! Total XS
+0.99         ! Scattering matrix

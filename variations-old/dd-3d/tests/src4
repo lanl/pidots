@@ -1,0 +1,19 @@
+! Source data input file
+0              ! Flag to indicate non-full specification
+4              ! # source instructions
+1
+1 1 1
+12 12 6
+1.0
+1
+1 1 1
+4 4 2
+2.0
+1
+9 1 1
+12 4 2
+2.0
+1
+11 9 5
+12 12 6
+2.0

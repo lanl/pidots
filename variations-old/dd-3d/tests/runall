@@ -1,0 +1,10 @@
+#!/bin/bash
+mpiexec -s all -n 1 ../pidosits in1 $1o1
+mpiexec -s all -n 2 ../pidosits in2 $1o2
+mpiexec -s all -n 4 ../pidosits in4 $1o4
+mpiexec -s all -n 8 ../pidosits in8 $1o8
+mpiexec -s all -n 16 ../pidosits in16 $1o16
+mpiexec -s all -n 32 ../pidosits in32 $1o32
+mpiexec -s all -n 64 ../pidosits in64 $1o64
+mpiexec -s all -n 128 ../pidosits in128 $1o128
+#

@@ -1,0 +1,9 @@
+#!/bin/bash
+./maker in1
+./maker in2
+./maker in4
+./maker in8
+./maker in16
+./maker in32
+./maker in64
+./maker in128

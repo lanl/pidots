@@ -1,0 +1,137 @@
+CODE: Parallel Integral Discrete Ordinates & Source Iteration Transport Solver
+ VERSION: 1.9.3
+ AUTHOR: Robert Joseph Zerr
+ Ran on  3-30-2009 at time 17:29: 0
+ 
+ -----------------------------------------------------------------------------
+
+   No input errors have been detected.
+
+
+
+   WARNING: BC angular flux from input should be zero or greater
+
+ -------------------- BEGIN INPUT ECHO ------------------------------------
+
+
+ First One Group Test Problem: Cube Mesh, Large Dimension                        
+ AHOT Order =     0
+ AHOT-N Method
+ Angular Order N =     4
+ Number of x-cells =     6
+ Number of y-cells =     6
+ Number of energy groups =     1
+ Number of materials =     2
+
+ Iteration Control Parameters
+ Maximum number of iterations =  6000
+ Pointwise convergence criterion =  1.000E-06
+ Highest moment converged =     0
+
+ Data read from input file: in      
+
+ Material map read from file: matrl   
+ Cross sections from file: xs      
+ Source data from file: source1 
+ BC data from file: angin   
+ Output written to file: outsi9  
+
+ EQN-type Discrete Ordinates/Octant
+  n    mu      eta       w
+  1  0.35002  0.35002  0.08333
+  2  0.35002  0.86889  0.08333
+  3  0.86889  0.35002  0.08333
+ 
+ Boundary Conditions: 0-Vacuum, 1-Input (See file)
+ Quad1  Quad2  Quad3  Quad4
+  1      1      1      1
+ 
+ x-dimension of cells 1 to     6
+   1.000E+00 1.000E+00 1.000E+00 1.000E+00 1.000E+00 1.000E+00
+ 
+ y-dimension of cells 1 to     6
+   1.000E+00 1.000E+00 1.000E+00 1.000E+00 1.000E+00 1.000E+00
+
+ Cross Section Data
+  Material    Group  Sigma_t      Sigma_s
+     1           1    1.000E-01    5.000E-02
+     2           1    3.000E-01    1.000E-01
+
+ Row   1   2   3   4   5   6 
+  6    1   1   1   1   1   1
+  5    2   2   2   1   1   1
+  4    2   2   2   1   1   1
+  3    1   1   1   2   2   2
+  2    1   1   1   1   1   1
+  1    1   1   1   1   1   1
+ 
+ Source for Group:   1 Moment  0 0 Row(j):   1
+   1.000E+00 1.000E+00 1.000E+00 1.000E+00 0.000E+00 0.000E+00
+ 
+ Source for Group:   1 Moment  0 0 Row(j):   2
+   1.000E+00 1.000E+00 1.000E+00 1.000E+00 0.000E+00 0.000E+00
+ 
+ Source for Group:   1 Moment  0 0 Row(j):   3
+   1.000E+00 1.000E+00 1.000E+00 1.000E+00 0.000E+00 0.000E+00
+ 
+ Source for Group:   1 Moment  0 0 Row(j):   4
+   1.000E+00 1.000E+00 1.000E+00 1.000E+00 0.000E+00 0.000E+00
+ 
+ Source for Group:   1 Moment  0 0 Row(j):   5
+   0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00
+ 
+ Source for Group:   1 Moment  0 0 Row(j):   6
+   0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00
+ 
+ ------------------------- END INPUT ECHO ---------------------------------
+ 
+ 
+ -------------------------- THE SOLUTION ----------------------------------
+ 
+ Group   1 source iterations...
+  Gr  1 It     1 Dfmx   3.415E+00
+  Gr  1 It     2 Dfmx   8.014E+01
+  Gr  1 It     3 Dfmx   1.064E+01
+  Gr  1 It     4 Dfmx   1.054E+00
+  Gr  1 It     5 Dfmx   3.202E-01
+  Gr  1 It     6 Dfmx   2.217E-02
+  Gr  1 It     7 Dfmx   6.225E-03
+  Gr  1 It     8 Dfmx   1.400E-03
+  Gr  1 It     9 Dfmx   5.153E-04
+  Gr  1 It    10 Dfmx   1.578E-04
+  Gr  1 It    11 Dfmx   7.685E-05
+  Gr  1 It    12 Dfmx   2.073E-05
+  Gr  1 It    13 Dfmx   1.021E-05
+  Gr  1 It    14 Dfmx   1.687E-06
+  Group   1 converged in    15 iterations. Max error =   5.993E-07
+
+ ========== Group    1 Converged Scalar Flux Zero Moment ==========
+  Row(j) :            1
+    4.167574E+00  4.169810E+00  3.863879E+00  3.121576E+00  2.010752E+00  1.146177E+00
+  Row(j) :            2
+    4.309338E+00  4.316966E+00  3.978585E+00  3.131641E+00  1.974875E+00  1.126558E+00
+  Row(j) :            3
+    3.964391E+00  3.989514E+00  3.657925E+00  2.795378E+00  1.648811E+00  9.524464E-01
+  Row(j) :            4
+    2.921168E+00  2.922367E+00  2.724156E+00  2.284012E+00  1.451399E+00  8.510880E-01
+  Row(j) :            5
+    1.535816E+00  1.545076E+00  1.439135E+00  1.409702E+00  1.316272E+00  9.618700E-01
+  Row(j) :            6
+    8.503992E-01  8.811605E-01  8.033155E-01  7.819789E-01  9.280337E-01  9.010806E-01
+
+
+  0 warnings have been issued
+
+ 
+ -------------------------- END SOLUTION ----------------------------------
+ 
+
+  Fortran95 Timing Estimates with CPU_TIME...
+
+     WorkDone   Absolute(s)      Difference(s)
+     InputWrk       0.012         0.012
+     SolveTot       0.016         0.016
+     PrintOut       0.016         0.000
+
+
+*********************   END PROGRAM  ************************

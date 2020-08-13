@@ -1,0 +1,21 @@
+First One Group Test Problem: Cube Mesh, Large Dimension
+1 1 1 2                  meth, TPOSE, SYM, IDOS 
+0 1 2 1.5                 invf, PCF, PCTY, SORW 
+6 1                       Order & Qudrature Type: 0/1/2 => TWOTRAN/EQN/Read-in
+12 12 6                     Number of Nodes in x- y- & z-Directions
+2 2 1                     Number of Processes in X Y and Z
+1 2                       Number of Groups & Number of Materials
+12*1.0                     x-size of cells
+12*1.0                     y-size of cells
+6*1.0                     z-size of cells
+0 0                       +Z, -Z BCs
+0 0                       +Y, -Y BCs
+0 0                       +X, -X BCs
+mat4                      Name of the material map file
+                          Name of the Quadrature input file
+xs                        Name of Cross Sections File
+src4                      Name of External Source File
+angin                     Name of BC Angular flux file
+1.e-6 1.e-14 5000 10 1.e-10       Conv.Crit., Max.Its., Tolerence
+1                         ITP
+1                         Flag for SFP 0/1/2=no/yes/rootP

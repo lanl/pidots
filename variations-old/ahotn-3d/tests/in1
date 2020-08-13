@@ -1,0 +1,21 @@
+Performance Testing - Base Case: Cube Mesh, Sized to fit P=1
+1 1 0 0 0    Lambda, Meth, Tpose, Sym, Idos
+0 0 0 1.5
+6 1          Order & Qudrature Type: 0/1/2 => TWOTRAN/EQN/Read-in
+8 8 8        Number of Nodes in x- y- & z-Directions
+4 1 2        Number of Processes in X Y and Z
+1 2          Number of Groups & Number of Materials
+8*1.        x-size of cells
+8*1.        y-size of cells
+8*1.        z-size of cells
+0 0          +Z, -Z BCs
+0 0          +Y, -Y BCs
+0 0          +X, -X BCs
+mat          Name of the material map file
+             Name of the Quadrature input file
+xs           Name of Cross Sections File
+src          Name of External Source File
+angin1       Name of BC Angular flux file
+1.e-6 1.e-6 100 1 0 1.e-10     Conv.Crit., Max.Its., Moments Converged, Tolerence
+1
+1

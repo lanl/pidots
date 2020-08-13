@@ -1,0 +1,20 @@
+Test input
+8 1                       Order & Qudrature Type: 0/1/2 => TWOTRAN/EQN/Read-in
+32 32 32                  Number of Nodes in x- y- & z-Directions
+2 2 2                     Number of Processes in X Y and Z
+4 4 4 c                   Number of cells per sub-domain in X Y and Z
+1                         Number of Materials
+32*1.0                       x-size of cells
+32*1.0                       y-size of cells
+32*1.0                       z-size of cells
+0 0                        +Z, -Z BCs
+0 0                        +Y, -Y BCs
+0 0                        +X, -X BCs
+mat                       Name of the material map file
+                          Name of the Quadrature input file
+xs                        Name of Cross Sections File
+src                       Name of External Source File
+                          Name of BC Angular flux file
+1.e-6 1500 1.e-10         Conv.Crit., Max.Its., Tolerance
+1                         ITP
+1                         SFP

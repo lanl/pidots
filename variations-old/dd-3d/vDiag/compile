@@ -1,0 +1,23 @@
+#! /bin/bash
+#
+ifort -c invar.f90
+ifort -c solvar.f90
+ifort -c timevar.f90
+ifort -c main.f90
+ifort -c version.f90
+ifort -c input.f90
+ifort -c angle.f90
+ifort -c readmt.f90
+ifort -c readxs.f90
+ifort -c readsrc.f90
+ifort -c check.f90
+ifort -c echo.f90
+ifort -c solve.f90
+ifort -c idomats.f90
+ifort -c idot.f90
+ifort -c matsweep.f90
+ifort -c gammas.f90
+ifort -c jima.f90
+ifort -c output.f90
+ifort -o pidosits *.o
+#

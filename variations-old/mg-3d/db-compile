@@ -1,0 +1,40 @@
+#! /bin/bash
+#
+mpif90 -f90=ifort -traceback -check bounds -O2 -c invar.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c solvar.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c totvar.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c main.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c version.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c input.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c angle.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c stages.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c readmt.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c readxs.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c readsrc.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c readbc.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c check.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c echo.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c psds.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c procgrid.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c solve.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c idomats.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c idot.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c idotv.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c cgidot.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c igidot.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c matsweep.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c gammas.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c jima.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c afcm.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c conk.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c pbj.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c residual.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c restrict.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c rsvgthr.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c rpsigthr.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c interp.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c corrscat.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c idogthr.f90
+mpif90 -f90=ifort -traceback -check bounds -O2 -c output.f90
+mpif90 -f90=ifort -traceback -check bounds -lblas -llapack -O2 -o db-pidosits *.o
+#

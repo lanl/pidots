@@ -1,0 +1,19 @@
+! Source data input file
+0              ! Flag to indicate non-full specification
+4              ! # source instructions
+1 0 0 0      ! group, x-moment, y-moment, z-moment
+1 1 1            ! starting x, y, and z cells
+8 8 1            ! ending x, y, and z cells
+0.250            ! magnitude of source
+1 0 0 0      ! group, x-moment, y-moment, z-moment
+1 1 2            ! starting x, y, and z cells
+8 8 2            ! ending x, y, and z cells
+0.750            ! magnitude of source
+1 0 0 0      ! group, x-moment, y-moment, z-moment
+1 1 3            ! starting x, y, and z cells
+8 8 3            ! ending x, y, and z cells
+0.500            ! magnitude of source
+1 0 0 0      ! group, x-moment, y-moment, z-moment
+1 1 4            ! starting x, y, and z cells
+8 8 4            ! ending x, y, and z cells
+1.000            ! magnitude of source

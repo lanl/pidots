@@ -1,0 +1,15 @@
+! Material Specification Input
+0                  ! Instructions, Base = 1
+4                  ! Number of Instructions
+  1   1   1        ! 1 Starting cell
+ 16  16  32           ! 1 Ending cell
+1.0                   ! 1 Material #
+  1   1  21        ! 2 Starting cell
+  4   4  32           ! 2 Ending cell
+2.0                   ! 2 Material #
+  1  13  21        ! 3 Starting cell
+  4  16  32           ! 3 Ending cell
+3.0                   ! 3 Material #
+ 13  13  21        ! 4 Starting cell
+ 16  16  32           ! 4 Ending cell
+4.0                   ! 4 Material #

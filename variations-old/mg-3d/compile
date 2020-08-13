@@ -1,0 +1,40 @@
+#! /bin/bash
+#
+mpif90 -f90=ifort -c invar.f90
+mpif90 -f90=ifort -c solvar.f90
+mpif90 -f90=ifort -c totvar.f90
+mpif90 -f90=ifort -c main.f90
+mpif90 -f90=ifort -c version.f90
+mpif90 -f90=ifort -c input.f90
+mpif90 -f90=ifort -c angle.f90
+mpif90 -f90=ifort -c stages.f90
+mpif90 -f90=ifort -c readmt.f90
+mpif90 -f90=ifort -c readxs.f90
+mpif90 -f90=ifort -c readsrc.f90
+mpif90 -f90=ifort -c readbc.f90
+mpif90 -f90=ifort -c check.f90
+mpif90 -f90=ifort -c echo.f90
+mpif90 -f90=ifort -c psds.f90
+mpif90 -f90=ifort -c procgrid.f90
+mpif90 -f90=ifort -c solve.f90
+mpif90 -f90=ifort -c idomats.f90
+mpif90 -f90=ifort -c idot.f90
+mpif90 -f90=ifort -c idotv.f90
+mpif90 -f90=ifort -c cgidot.f90
+mpif90 -f90=ifort -c igidot.f90
+mpif90 -f90=ifort -c matsweep.f90
+mpif90 -f90=ifort -c gammas.f90
+mpif90 -f90=ifort -c jima.f90
+mpif90 -f90=ifort -c afcm.f90
+mpif90 -f90=ifort -c conk.f90
+mpif90 -f90=ifort -c pbj.f90
+mpif90 -f90=ifort -c residual.f90
+mpif90 -f90=ifort -c restrict.f90
+mpif90 -f90=ifort -c rsvgthr.f90
+mpif90 -f90=ifort -c rpsigthr.f90
+mpif90 -f90=ifort -c interp.f90
+mpif90 -f90=ifort -c corrscat.f90
+mpif90 -f90=ifort -c idogthr.f90
+mpif90 -f90=ifort -c output.f90
+mpif90 -f90=ifort -lblas -llapack -o pidosits *.o
+#

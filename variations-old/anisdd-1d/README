@@ -1,0 +1,19 @@
+November 2009
+
+New code: 1D Anisotropic Scattering Code
+v2.9.11-DD-1D-AnisotropicScattering
+
+Take 3D Diamond difference code and reduced it to 1D
+1. Remove all references to multi-dimensions
+2. Rewrote equations that account for infinite medium in y and z
+3. Corrected the input reading and the communication structure
+
+Add to 1D slab code the Anisotropic Scattering
+1. Read in scattering cross sections for increasing moments
+2. SI algorithm same with sweep except now must solve for multiple angular moments
+3. Do this by solving for angular flux, then using Legendre polynomial and quadrature
+    compute the flux angular moments to be used as scattering source for next iteration.
+4. In ITMM, must have a Gamma matrix that has the number of columns dependent on the highest
+    order of the scattering term expansion.
+5. Include these terms in the Gamma matrix expression.
+6. Compute the operators so that they are ordered by cell and angular moment.

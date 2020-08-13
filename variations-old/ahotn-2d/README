@@ -1,0 +1,17 @@
+March 2009
+
+First Pidosits code.
+Two-dimensional case
+
+Features that are the main changes from ahotn-2d-full
+
+1. No CGSOLVE solution option
+2. The new PSDS routine divides up the parallel work
+3. The new IDOMATS routine replaces the IDOT routine to control operator construction
+4. The IDOT routine now handles the ITMM solution steps: update phi/psi between PBJ iterations
+5. PBJ routine handles the communications between the PBJ iterations
+6. PROCGRID sets up the 2D mesh processor topology
+7. BNC function attempts to evenly divide the number of cells per sub-domain
+8. Input has additional line for number of processors
+9. Input removes quadrant fluxes input line and matrix printing line
+10. Final input line for CG/Direct solution removed: only direct solution here, only asymmetric matrices

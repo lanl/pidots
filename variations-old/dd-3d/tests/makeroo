@@ -1,0 +1,2 @@
+#!/bin/bash
+sed 's/1 1 1 1 /1 1 1 2 /g' < $1 > tf ; mv tf $1

@@ -1,0 +1,20 @@
+Growing Problem--Weak Scaling Study
+8 1 q                           Order & Qudrature Type: 0/1/2 => TWOTRAN/EQN/Read-in
+16 16 32                        Number of Nodes in x- y- & z-Directions
+1 1 2                           Number of Processes in X Y and Z
+8 8 8 c                         Number of cells per sub-domain in X Y and Z
+4                               Number of Materials
+16*0.1 d                          x-size of cells
+16*0.1 d                          y-size of cells
+32*0.1 d                          z-size of cells
+0 0                              +Z, -Z BCs
+0 0                              +Y, -Y BCs
+0 0                              +X, -X BCs
+mt010102                        Name of the material map file
+                                Name of the Quadrature input file
+xs99                            Name of Cross Sections File
+sr010102                        Name of External Source File
+                                Name of BC Angular flux file
+1.e-6 5000 1.e-10               Conv.Crit., Max.Its. (PBJ & SI/CG), Tolerence
+1                               ITP 0/1 = No/Yes
+2                               SFP 0/1/2 = No/Yes/Root P Only

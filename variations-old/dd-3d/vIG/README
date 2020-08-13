@@ -1,0 +1,127 @@
+April 2010
+
+Special version v1.10.2-DD-Initial Guess
+1. Change code to read and apply an initial guess of the scalar flux for the first PBJ iteration
+2. Reads the initial guess in INPUT and sends the values to SOLVE.
+3. SOLVE and IDOT direct the code to immediately compute IG's corresponding PSI-out before first original
+    iteration is performed.
+4. PSI-out is then communicated via PBJ and regular iterative sequence is performed.
+
+########################################################################################################
+
+February 2010
+
+New version v1.10.2
+Updates to use the phi from previous iterate in CG and include SOR solution
+1. Change IDOS to equal 0, 1, or 2, where 2 is for SOR.
+2. Add initialization of phiold in SOLVE routine.
+3. Change CGSOLVE*** routines to initialize phi to phiold and compute residual with that
+4. After new phi is computed, check convergence immediate in CG routines.
+5. Move all other CG operations into the IF statement that cycles the iteration, thus saving
+    work on the final iteration of the CG call.
+6. New routine SOR for solving the local system. Uses the SORW originally included for the SOR preconditioner.
+7. Update the ECHO to reflect changes to input.
+
+Directory "tests" to check that code works properly.
+
+########################################################################################################
+
+January 2010
+
+New version v1.10.1
+Updates to include Factoring only for direct solution and preconditioning CG
+1. Added line to input for invf, pcf, pcty, and sorw: inversion flag, preconditioner flag,
+    preconditioner type, and SSOR weight factor.
+2. Removed line for checking frequency.
+3. Fixed/improved echo for new inputs.
+4. Moved piv array from factoring/inverting jmat to solvar. Only allocates/deallocates when needed.
+5. Added dv to solvar for the inverse diagonal matrix. Only allocates/deallocates when needed.
+6. Rearranged operations in IDOT and IDOMATS depending on the values of invf, pcf, pcty in addition to
+    the idos, sym, tpose flags.
+7. Created three new CG routines for preconditioning: CGSOLVEJAC, CGSOLVESGS, CGSOLVESOR.
+8. Use dpotrs and dgetrs to do factored system solving in IDOT.
+9. Made neq, bcs, and bcs2 global variables in solvar.
+10. Added xys=nx*ny, xzs=nx*nz, and yzs=ny*nz to solvar. Defined in SOLVE, replace multiplications
+     wherever appropriate.
+11. Changed the allocation of matrices in CG routines, AFCM, and CONK to use neq, xys, xzs, yzs
+     instead of multiplications.
+
+Directory "tests" has test files for comparison between preconditioners and the factor only vs. invert method.
+
+########################################################################################################
+
+November 2009
+
+New version v.1.9.11
+Updates to improve previous version v1.9.10
+1. Rework the AFCM-CONK relationship.
+2. Instead of copying an entire row (or column with Transpose flag on) of kmat from conk's ktmp, just
+    copy the necessary elements that have been changed.
+3. Use ktmpx, ktmpy, ktmpz to update the non-continuous pieces of the row.
+4. Call conk once, get the three ktmp arrays and place them accordingly.
+5. Correct the warning for non-convergence in a single sub-domain in SOLVE (use MPI_MIN with reduction
+    on cnvf instead of MPI_MAX).
+
+Directory "tests" has test cases to show consistent results and improved timings.
+
+#######################################################################################################
+
+October 2009
+
+New version v.1.9.10
+Updates to improve previous version v1.9.7
+1. Add the 'tpose' flag to the input that refers to constructing TRANSPOSED operators Jphi, Kphi, Jpsi, Kpsi
+2. tpose = 1: yes construct transpose. tpose = 0: no
+3. Rewrite IDOMATS to perform options based on whether or not tpose = 1. Different loops to perform identical
+    matrix and vector operations
+4. Rewrite JIMA and AFCM to construct the operators normal or transposed based on tpose.
+5. Allocate accordingly in SOLVE based on tpose
+6. Add to ECHO the transposed operation or not
+7. Change CGSOLVE to have the relative difference between successive iterates instead of convergence based
+    on the residual. Suffer the penalty for better accuracy.
+8. Set the IDOT operations based on tpose. Old ones use MATMUL, new ones use loops of repetitive dot products.
+9. Replace the jmat*kmat loops in IDOMATS with calls to blas sub-routine DGEMM.
+
+
+Comparison runs with old method as well as validation of results in directory "tests"
+Further timing tests in vFiner-timing
+
+#######################################################################################################
+
+July 2009
+
+New version v1.9.7
+Updates to improve previous version v1.9.6.1
+1. Improved output options
+2. Removed the angular flux print option that wasn't needed
+3. Added an iterative data print option so it can be there if needed but removed for better I/O
+4. Made further changes to optimize performance
+5. Used improved index orderings of xmat, ymat, zmat
+6. Removed conab and cong and placed all the work into gammas
+7. Improved matrix-multiplication of jphi*kphi in IDOMATS
+
+######################################################################################################
+
+June 2009
+
+New version: v1.9.6.1
+Updates to improve previous version v1.9.6
+1. Remove all references to spatial orders. Including removing the references in INPUT.
+2. Use fewer array indices, leaving out spatial order indices
+3. Get rid of WEIGHT routine and alpha, beta, gamma variables
+4. Improve conab, cong, gammas to perform only necessary operations, not have generic loops for spatial orders
+5. Use analytical expressions for inverse of amat multiplied with bmat to form gmat 
+
+######################################################################################################
+
+June 2009
+
+Pidosits code.
+Three-dimensional case.
+
+First Version that uses ONLY the diamond difference discretization
+
+Modified from AHOT-N-3D Pidosits in the following ways:
+Starting from ahot-n-3d pidosits v1.9.6
+1. Rewrite the WEIGHT sub-routine to compute the ex, ey, ez and set alpha, beta, and gamma to zero.
+2. No other changes to utilize the DD method.
